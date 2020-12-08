@@ -4,7 +4,7 @@ import random
 import time
 from kafka import KafkaConsumer
 
-consumer = KafkaConsumer('main_topic', group_id='test-consumer-group', bootstrap_servers=['194.61.2.84:2181'], api_version=(0,10,1), auto_offset_reset='earliest')
+consumer = KafkaConsumer('main_topic', bootstrap_servers=['194.61.2.84:22181'], api_version=(0,10,1), auto_offset_reset='earliest')
 
 print("*"*50,"\nНазвание: Приниматель запросов 3000.\nЭта программа умеет принимать сообщение из общего топика Kafka.\nЕсли сообщение типа *message*, то мы пишем, что всё ок, иначе - отправляем это сообщение в другой топик (dead_letter).\nАвтор: Ниемисто Владимир, Nikel 2020")
 print("*"*50)

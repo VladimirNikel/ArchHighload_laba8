@@ -4,9 +4,9 @@ services:
     image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
-      environment:
-        ZOOKEEPER_SERVER_ID: 1
-        ZOOKEEPER_CLIENT_PORT: 22181
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 22181
   kafka1:
     build: .
     ports:

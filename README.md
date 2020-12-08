@@ -28,6 +28,11 @@
 1. Перейти в папку репозитория
 1. На серврере, где будет расположен kafka-кластер выполнить следующую команду:
 	```bash
+	git clone https://github.com/wurstmeister/kafka-docker.git
+	cp Dockerfile ./kafka-docker
+	cp docker-compose.yml ./kafka-docker
+	cp kafka_topics.sh ./kafka-docker
+	cd kafka-docker
 	docker-compose up -d
 	```
 1. Далее запустить первое приложение (producer) командой `python3 app1.py`

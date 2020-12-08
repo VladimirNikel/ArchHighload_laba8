@@ -2,7 +2,7 @@ import json
 import datetime
 from kafka import KafkaProducer
 
-producer = KafkaProducer(bootstrap_servers=['194.61.2.84:5099'])				# value_serializer=lambda v: json.dumps(v).encode('utf-8')
+producer = KafkaProducer(security_protocol="SSL", bootstrap_servers=['194.61.2.84:22181'])				# value_serializer=lambda v: json.dumps(v).encode('utf-8')
 
 print("*"*50,"\nНазвание: Посылатель запросов 3000.\nЭта программа умеет слать сообщение в общий топик Kafka.\nДля этого Вам будет предложено выбрать два имеющихся типа сообщений, но и также, предоставляется возможность ввести свой тип сообщений и отправить его в топик.\nАвтор: Ниемисто Владимир, Nikel 2020")
 print("*"*50)
