@@ -29,14 +29,13 @@
 1. На серврере, где будет расположен kafka-кластер выполнить следующую команду:
 	```bash
 	git clone https://github.com/wurstmeister/kafka-docker.git
-	cp Dockerfile ./kafka-docker
 	cp docker-compose.yml ./kafka-docker
-	cp kafka_topics.sh ./kafka-docker
 	cd kafka-docker
-	docker-compose up -d
+	docker-compose up -d zookeeper
+	docker-compose scale kafka=3
 	```
-1. Далее запустить первое приложение (producer) командой `python3 app1.py`
-1. И запустить второе приложение (consumer) командой `python3 app2.py`
+1. Далее запустить в одном терминале первое приложение (producer) командой `python3 app1.py`
+1. И запустить второе приложение (consumer) командой `python3 app2.py` в другом терминале
 1. Пользоваться первым приложением, согласно инструкции и наблюдать результаты Ваших действий во втором приложении
 
 1. По завершении остановить *docker-compose* выполнением команды на сервере:
@@ -48,3 +47,7 @@
 - GIT (устанавливается командой `sudo apt install git -y`)
 - Установленные модули:
 	+ kafka-python (устанавливается командой `sudo pip3 install kafka-python`)
+
+
+## Почитать:
+- [полезности из Wiki разработчиков kafka-docker](https://github.com/wurstmeister/kafka-docker)
