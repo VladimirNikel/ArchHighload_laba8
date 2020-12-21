@@ -28,7 +28,6 @@ try:
 				print(datetime.datetime.utcnow().strftime("%Y.%m.%d %H:%M:%S"),("\tОкей, тогда я отправлю сообщение типа *{}*".format(other_type_message)))
 				send_json = (json.dumps({"type": other_type_message})).encode('utf-8')
 
-		print(json.loads(send_json.decode('utf-8')))
 		producer.send('main_topic', send_json)
 		
 except KeyboardInterrupt:
